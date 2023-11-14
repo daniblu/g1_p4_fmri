@@ -1,0 +1,8 @@
+nilearn==0.10.1
+nibabel==5.1.0
+matplotlib==3.7.1
+matplotlib-inline==0.1.6
+ipykernel==6.25.2
+ipython==8.17.2
+pandas==2.1.2
+numpy==1.26.1
