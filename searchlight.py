@@ -123,7 +123,6 @@ if __name__ == '__main__':
 
     # keep only contrast vectors/rows corresponding to the trial variables
     N_trials = len(events1[0]['trial_type'])
-    N_trials
     contrasts = contrasts[:N_trials, :]
 
     # extract betas for the whole volume
