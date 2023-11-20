@@ -165,6 +165,10 @@ if __name__ == '__main__':
     fmri_img_train = index_img(pattern_p_n, idx_train)
     fmri_img_test = index_img(pattern_p_n, idx_test)
     
+    # save splits
+    with open('splits.pkl', 'wb') as f:
+        pickle.dump([fmri_img_train, fmri_img_test, conditions_train, conditions_test], f)
+
     # load mask image
     mask_wb_filename='/work/816119/InSpePosNegData/BIDS_2023E/derivatives/sub-0116/anat/sub-0116_acq-T1sequence_run-1_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz'
     mask_img = load_img(mask_wb_filename)

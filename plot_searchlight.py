@@ -27,4 +27,4 @@ if __name__ in "__main__":
 
         # plot
         fig = plot_glass_brain(searchlight_img, threshold=cut)
-        fig.savefig(f"plots/pos_neg_searchlight_{int(best)}.png", dpi=300)
+        fig.savefig(f"out/pos_neg_searchlight_{int(best)}.png", dpi=300)
