@@ -1,0 +1,6 @@
+cluster_id,peak_x,peak_y,peak_z,peak_value,volume_mm,aal,desikan_killiany,harvard_oxford
+1.0,57.0,-34.30000019073486,34.35499978065491,0.8993842601776123,8.590760886669159,SupraMarginal_R,Right-Cerebral-White-Matter,22.0% Right_Parietal_Operculum_Cortex; 21.0% Right_Supramarginal_Gyrus_anterior_division; 17.0% Right_Supramarginal_Gyrus_posterior_division
+2.0,-21.0,-16.71400022506714,28.492999792099,0.8855911493301392,7.636231899261475,no_label,Left-Cerebral-White-Matter,0% no_label
+3.0,48.0,-50.90900015830994,-34.03500008583069,0.875,4.772644937038422,Cerebelum_Crus1_R,Right-Cerebellum-Cortex,0% no_label
+4.0,10.0,-27.461000204086304,-3.748000144958496,0.878078818321228,4.772644937038422,no_label,Brain-Stem,17.0% Brain-Stem
+5.0,-21.0,-43.093000173568726,-13.51800012588501,0.8714285492897034,4.772644937038422,Fusiform_L,Unknown,37.0% Left_Lingual_Gyrus; 22.0% Left_Parahippocampal_Gyrus_posterior_division; 19.0% Left_Temporal_Occipital_Fusiform_Cortex; 15.0% Left_Temporal_Fusiform_Cortex_posterior_division
