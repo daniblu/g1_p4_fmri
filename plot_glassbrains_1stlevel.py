@@ -32,9 +32,9 @@ from nilearn.image import mean_img
 
 # load the preprocessed data
 #BIDS directory
-data_dir='/work/816119/InSpePosNegData/BIDS_2023E/' 
+data_dir='/home/maltelau/cogsci/neuro-23/data/InSpePosNegData/BIDS_2023E/' 
 # BIDS derivatives (contains preprocessed data)
-derivatives_dir=  '/work/816119/InSpePosNegData/BIDS_2023E/derivatives'  
+derivatives_dir=  '/home/maltelau/cogsci/neuro-23/data/InSpePosNegData/BIDS_2023E/derivatives'  
 
 # Name for experiment in the BIDS directory
 task_label = 'boldinnerspeech'
@@ -102,8 +102,8 @@ def bonf_corr_plot (newmodel,newcontrast, correction = "bonferroni", comment='')
     z_map, alpha=0.05, height_control=correction)
     print('The p<.05 FWER-corrected threshold is %.3g' % threshold)
 
-    filename = 'glassbrain_' + newcontrast+ correction + comment+'.jpg'
-    filename = filename.replace("(", "").replace(")", "").replace("+","").replace("/","")
+    filename = 'glassbrain_' + comment + newcontrast + correction + '.jpg'
+    filename = "out/" + filename.replace("(", "").replace(")", "").replace("+","").replace("/","")
 
     plotting.plot_glass_brain(z_map, cmap='PiYG',colorbar=True, threshold=threshold,
                           title=f'Group [{newcontrast}] effect (p<0.05,{correction}-corrected)',
@@ -150,13 +150,14 @@ bonf_corr_plot(models, 'B-(N+P)/2', 'fdr')
 # run model withOUT button press events
 print("Now run it without BP in model")
 models, models_run_imgs, models_events, models_confounds = construct_models_from_1st_level()
+models.fit(models_run_imgs,models_events,models_confounds)
 
 
-bonf_corr_plot(models, 'N-P', 'covarBP')
-bonf_corr_plot(models, 'N+P', 'covarBP')
-bonf_corr_plot(models, 'B-(N+P)/2', 'covarBP')
+bonf_corr_plot(models, 'N-P', comment='covarBP_')
+bonf_corr_plot(models, 'N+P', comment= 'covarBP_')
+bonf_corr_plot(models, 'B-(N+P)/2', comment= 'covarBP_')
 
-bonf_corr_plot(models, 'N-P', 'fdr')
-bonf_corr_plot(models, 'N+P', 'fdr')
-bonf_corr_plot(models, 'B-(N+P)/2', 'fdr')
+bonf_corr_plot(models, 'N-P', 'fdr', comment= 'covarBP_')
+bonf_corr_plot(models, 'N+P', 'fdr', comment= 'covarBP_')
+bonf_corr_plot(models, 'B-(N+P)/2', 'fdr', comment= 'covarBP_')
 
