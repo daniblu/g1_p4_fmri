@@ -31,19 +31,19 @@ if __name__ in "__main__":
     fig.savefig("out/neg_but_searchlight.png", dpi=300)
 
     # PLOT TOP VOXELS
-    #best_sets = [200.0, 500.0, 1000.0]
-    #titles = ["A) 200 most informative voxels", "B) 500 most informative voxels", "C) 1000 most informative voxels"]
+    best_sets = [200.0, 500.0, 1000.0]
+    titles = ["A) 200 most informative voxels", "B) 500 most informative voxels", "C) 1000 most informative voxels"]
 
-    #for i, best in enumerate(best_sets):
+    for i, best in enumerate(best_sets):
         # find the percentile that makes the cutoff for the X best voxels
-    #    perc=100*(1-best/searchlight.scores_.size)
+        perc=100*(1-best/searchlight.scores_.size)
 
         # find the cutoff
-    #    cut=np.percentile(searchlight.scores_,perc)
+        cut=np.percentile(searchlight.scores_,perc)
 
         # create an image of the searchlight scores
-    #    searchlight_img = new_img_like(anat_filename, searchlight.scores_)
+        searchlight_img = new_img_like(anat_filename, searchlight.scores_)
 
         # plot
-    #    fig = plot_glass_brain(searchlight_img, threshold=cut, title=titles[i])
-    #    fig.savefig(f"out/pos_neg_searchlight_{int(best)}.png", dpi=300)
+        fig = plot_glass_brain(searchlight_img, threshold=cut, title=titles[i])
+        fig.savefig(f"out/pos_neg_searchlight_{int(best)}.png", dpi=300)
