@@ -32,7 +32,7 @@ if __name__ in "__main__":
         cut = np.percentile(searchlight.scores_, perc)
 
         # whole brain mask path
-        mask_wb_filename = '/work/816119/InSpePosNegData/BIDS_2023E/derivatives/sub-0116/anat/sub-0116_acq-T1sequence_run-1_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz'
+        mask_wb_filename = '/work/fMRI_data/InSpePosNegData/BIDS_2023E/derivatives/sub-0116/anat/sub-0116_acq-T1sequence_run-1_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz'
 
         # load the whole brain mask
         mask_img = load_img(mask_wb_filename)
@@ -57,7 +57,7 @@ if __name__ in "__main__":
             verbose=0, scoring=None)
         
         # write results
-        L.append(f"{int(best)}| Classification accuracy: {score_cv_test}, p-value: {pvalue} \n")
+        L.append(f"{int(best)} (>{cut})| Classification accuracy: {score_cv_test}, p-value: {pvalue} \n")
 
     # save results
     with open("out/classification_results.txt", "w") as f:
