@@ -6,3 +6,4 @@ ipykernel==6.25.2
 ipython==8.17.2
 pandas==2.1.2
 numpy==1.26.1
+scikit-learn
